@@ -7,39 +7,8 @@ import { Plus } from "lucide-react"
 import { Breadcrumb } from "@/components/admin/breadcrumb"
 import { ArticlesTable } from "@/components/admin/articles-table"
 import type { Article } from "@/components/admin/article-page"
-import { SerializedEditorState } from "lexical"
 import { useEffect } from "react"
-import { getArticles } from "@/lib/db"
 
-const initialValue = {
-  root: {
-    children: [
-      {
-        children: [
-          {
-            detail: 0,
-            format: 0,
-            mode: "normal",
-            style: "",
-            text: "Hello World 🚀",
-            type: "text",
-            version: 1,
-          },
-        ],
-        direction: "ltr",
-        format: "",
-        indent: 0,
-        type: "paragraph",
-        version: 1,
-      },
-    ],
-    direction: "ltr",
-    format: "",
-    indent: 0,
-    type: "root",
-    version: 1,
-  },
-} as unknown as SerializedEditorState
 
 export default function ArticlesPage() {
   const router = useRouter()
