@@ -1,22 +1,10 @@
 import { MetadataRoute } from "next"
+import { getArticles } from "@/lib/db"  // make sure this exists
 
-// Assuming these are your blog slugs
-const blogPosts = [
-  "10-sales-funnel-mistakes",
-  "6-success-traps",
-  "shock-discounting-just-5-percent-can-hurt-your-bottom-line-by-a-massive-50-percent",
-  "the-secret-to-effortless-sales-growth-build-a-referral-selling-machine",
-  "the-winning-sales-strategy-that-salesforce-just-endorsed",
-  "three-stages-of-building-trust-with-buyers",
-]
-
-// Assuming these are your case study slugs
-const caseStudies = ["amag", "engineering-services", "it-services"]
-
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://www.peterstrohkorb.com"
 
-  // Add other pages here
+  // Static pages
   const staticPages = [
     "",
     "/about",
@@ -42,17 +30,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = staticPages.map(page => ({
     url: `${baseUrl}${page}`,
     lastModified: new Date(),
-    changeFrequency: page === "" || page.startsWith("/blog") || page.startsWith("/case-studies") ? "monthly" : "weekly",
+    changeFrequency: "weekly" as const,
     priority: page === "" ? 1.0 : 0.8,
   }))
 
-  const blogRoutes = blogPosts.map(slug => ({
-    url: `${baseUrl}/blog/${slug}`,
-    lastModified: new Date(),
+  // ✅ Blog posts (dynamic from DB now)
+  const articles = await getArticles()
+  const blogRoutes = articles.map(article => ({
+    url: `${baseUrl}/blog/${article.id}`, // use article.slug if available
+    lastModified: article.updated_at ? new Date(article.updated_at) : new Date(article.created_at),
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }))
 
+  // Case studies (unchanged, still static)
+  const caseStudies = ["amag", "engineering-services", "it-services"]
   const caseStudyRoutes = caseStudies.map(slug => ({
     url: `${baseUrl}/case-studies/${slug}`,
     lastModified: new Date(),
