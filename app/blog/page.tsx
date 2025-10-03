@@ -8,6 +8,7 @@ import { ArrowRight, Calendar, User } from "lucide-react"
 import ModernHeader from "@/components/modern-header"
 import { getArticles } from "@/lib/db"
 
+export const dynamic = "force-dynamic";
 
 export default async function BlogPage() {
   const dynamicArticles = await getArticles()
