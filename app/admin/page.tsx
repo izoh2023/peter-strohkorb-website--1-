@@ -27,11 +27,11 @@ export default function AdminHome() {
       action: () => router.push("/admin/articles"),
     },
     {
-      title: "Users",
+      title: "Roundtable",
       description: "Manage user accounts and permissions",
       icon: Users,
       count: stats.authors,
-      action: () => alert("Users management coming soon"),
+      action: () => router.push("/admin/roundtable"),
     },
     {
       title: "Settings",
