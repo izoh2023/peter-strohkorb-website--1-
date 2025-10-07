@@ -92,14 +92,13 @@ export default function SalesMasterRoundtablePage() {
       month: "August",
       title: '"The Mind Boggling Advances In AI for B2B Sales"',
       description: "with expert guest speaker Isaac Cohen, CEO, Many Mangoes",
-      summaryLink:
-        "https://docs.google.com/document/d/1CMM0iYbnGDGf9APR7Q3NNkFjgVZaoiRB/edit?usp=drive_link&ouid=106280256984024101930&rtpof=true&sd=true",
+      summaryLink: "https://docs.google.com/document/d/1CMM0iYbnGDGf9APR7Q3NNkFjgVZaoiRB/edit?usp=drive_link&ouid=106280256984024101930&rtpof=true&sd=true",
     },
     {
       month: "September",
       title: '"The Hot Seat"',
-      description:
-        "Bring your sales questions, challenges, or opportunities for the group to workshop and solve, right there and then. Live!",
+      description: "Bring your sales questions, challenges, or opportunities for the group to workshop and solve, right there and then. Live!",
+      summaryLink: "https://docs.google.com/document/d/1gIdJVX7Chk3IbTqmIXkiLm36VBt3hPvG/edit?usp=drive_link&ouid=105641804438849414446&rtpof=true&sd=true",
     },
     {
       month: "October",
