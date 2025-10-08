@@ -9,7 +9,7 @@ interface topics {
     summarylink: string
     updated_at: string
 }
-export const dynamic = "force-dynamic";
+
 
 export async function GET(request: NextRequest) {
   try {
