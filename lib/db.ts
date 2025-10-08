@@ -32,6 +32,17 @@ export interface CreateArticleData {
   seo_keywords?: string
 }
 
+interface topic {
+    id: string
+    month: string;
+    title: string;
+    description: string;
+    summarylink: string;
+    updated_at: string
+
+}
+
+
 export interface UpdateArticleData extends CreateArticleData {
   id: string
 }
@@ -85,6 +96,53 @@ export async function upsertArticle(data: UpdateArticleData | CreateArticleData)
 export async function deleteArticle(id: string): Promise<void> {
   await sql`
     DELETE FROM articles 
+    WHERE id = ${id}
+  `
+}
+
+export async function getTopics(): Promise<topic[]> {
+  const topics = await sql`
+    SELECT * FROM topics
+    ORDER BY updated_at DESC
+  `
+  return topics as topic[]
+}
+
+export async function getTopicById(id: string): Promise<topic | null> {
+  const topics = await sql`
+    SELECT * FROM topics 
+    WHERE id = ${id}
+  `
+  return (topics[0] as topic) || null
+}
+
+export async function upsertTopic(data: topic): Promise<topic> {
+  const result = await sql`
+    INSERT INTO topics (
+      id, month, title, description, summarylink
+    )
+    VALUES (
+      ${data.id || uuidv4()},
+      ${data.month},
+      ${data.title},
+      ${data.description},
+      ${data.summarylink}
+    )
+    ON CONFLICT (id) DO UPDATE SET
+      month = EXCLUDED.month,
+      title = EXCLUDED.title,
+      description = EXCLUDED.description,
+      summarylink = EXCLUDED.summarylink,
+      updated_at = CURRENT_TIMESTAMP
+    RETURNING *;
+  `
+
+  return result[0] as topic
+}
+
+export async function deleteTopic(id: string): Promise<void> {
+  await sql`
+    DELETE FROM topics 
     WHERE id = ${id}
   `
 }

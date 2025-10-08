@@ -11,10 +11,11 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 export interface Topic {
+  id?: string;
   month: string
   title: string
   description: string
-  summaryLink: string
+  summarylink: string
 }
 
 interface TopicFormProps {
@@ -44,7 +45,7 @@ export function TopicForm({ initialData, onSubmit, mode = "create" }: TopicFormP
       month: "",
       title: "",
       description: "",
-      summaryLink: "",
+      summarylink: "",
     },
   )
   const [errors, setErrors] = useState<Partial<Record<keyof Topic, string>>>({})
@@ -65,15 +66,6 @@ export function TopicForm({ initialData, onSubmit, mode = "create" }: TopicFormP
       newErrors.description = "Description is required"
     }
 
-    if (!formData.summaryLink.trim()) {
-      newErrors.summaryLink = "Summary link is required"
-    } else {
-      try {
-        new URL(formData.summaryLink)
-      } catch {
-        newErrors.summaryLink = "Please enter a valid URL"
-      }
-    }
 
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0
@@ -99,7 +91,7 @@ export function TopicForm({ initialData, onSubmit, mode = "create" }: TopicFormP
       month: "",
       title: "",
       description: "",
-      summaryLink: "",
+      summarylink: "",
     })
     setErrors({})
   }
@@ -175,28 +167,28 @@ export function TopicForm({ initialData, onSubmit, mode = "create" }: TopicFormP
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="summaryLink">
+            <Label htmlFor="summarylink">
               Summary Link <span className="text-destructive">*</span>
             </Label>
             <Input
-              id="summaryLink"
+              id="summarylink"
               type="url"
               placeholder="https://example.com/summary"
-              value={formData.summaryLink}
+              value={formData.summarylink}
               onChange={(e) => {
-                setFormData({ ...formData, summaryLink: e.target.value })
-                setErrors({ ...errors, summaryLink: undefined })
+                setFormData({ ...formData, summarylink: e.target.value })
+                setErrors({ ...errors, summarylink: undefined })
               }}
-              className={errors.summaryLink ? "border-destructive" : ""}
+              className={errors.summarylink ? "border-destructive" : ""}
             />
-            {errors.summaryLink && <p className="text-sm text-destructive">{errors.summaryLink}</p>}
+            {errors.summarylink && <p className="text-sm text-destructive">{errors.summarylink}</p>}
           </div>
 
           <div className="flex gap-3 pt-4">
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="bg-accent text-accent-foreground hover:bg-accent/90"
+              className="bg-accent/90 text-accent-foreground hover:bg-accent"
             >
               {isSubmitting
                 ? mode === "create"
