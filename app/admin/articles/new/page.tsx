@@ -37,6 +37,7 @@ export default function NewTopicPage() {
     e.preventDefault()
     setIsSubmitting(true)
 
+    
     try {
       // Validation
       if (!formData.title.trim() || !formData.month.trim() || !formData.description.trim()) {

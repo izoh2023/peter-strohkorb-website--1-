@@ -1,4 +1,4 @@
-import { deleteTopic, getArticleById, getTopicById, getTopics, upsertTopic } from "@/lib/db";
+import { deleteTopic, getTopicById, getTopics, upsertTopic } from "@/lib/db";
 import { NextRequest, NextResponse } from "next/server";
 
 interface topics {
@@ -9,6 +9,7 @@ interface topics {
     summarylink: string
     updated_at: string
 }
+export const dynamic = "force-dynamic";
 
 export async function GET(request: NextRequest) {
   try {
