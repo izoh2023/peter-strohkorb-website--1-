@@ -6,10 +6,9 @@ import ModernHeader from "@/components/modern-header"
 import { FadeInSection } from "@/components/fade-in-section"
 import { getTopics } from "@/lib/db"
 
-export const dynamic = "force-dynamic";
+// export const dynamic = "force-dynamic";
 
 export default async function SalesMasterRoundtablePage() {
-  const topics = await getTopics()
   
   const reasons = [
     {
@@ -50,79 +49,79 @@ export default async function SalesMasterRoundtablePage() {
     },
   ]
 
-  // const topics = [
-  //   {
-  //     month: "January",
-  //     title: '"Jobless but Not Speechless": The Truth About Sales Job Hunting',
-  //     description: "An open and interactive discussion on this important subject in sales.",
-  //   },
-  //   {
-  //     month: "February",
-  //     title: '"The CRO Conundrum": What Is The CRO\'s REAL Role?',
-  //     description: "w/ expert guest speaker Warren Zenna, Founder and CEO at The CRO Collective, USA.",
-  //   },
-  //   {
-  //     month: "March",
-  //     title: '"Mastering Referral Selling"',
-  //     description: "w/ expert guest speaker Derek Morgan, Head of Affiliates & Partnerships at ReferIT, Australia",
-  //   },
-  //   {
-  //     month: "April",
-  //     title: '"The Hot Seat"',
-  //     description:
-  //       "Back by popular demand. Bring your burning sales questions, challenges, or opportunities for the group to workshop and solve, right there and then. Live!",
-  //   },
-  //   {
-  //     month: "May",
-  //     title: '"What\'s Possible with Ai for Sales Growth"',
-  //     description: "with expert guest speaker Lucas Meadowcroft, CEO, Crofti Ai, Australia.",
-  //     summarylink:
-  //       "https://static1.squarespace.com/static/62dab60e17e29179c0433792/t/681d5949d4025e3f5ba9817b/1746753867383/The+Sales+Masters+Roundtable+Summary+May+2025+-+What%27s+Possible+With+Ai.pdf",
-  //   },
-  //   {
-  //     month: "June",
-  //     title: '"More Pipeline from Your Website"',
-  //     description: "with expert guest speaker Terry Wilson, CEO, Chat Metrics, Australia.",
-  //     summarylink:
-  //       "https://docs.google.com/document/d/19dtVebKeRAfiBgVSNJkJu8mVJ8TzD9Kf/edit?usp=sharing&ouid=109878350311066705609&rtpof=true&sd=true",
-  //   },
-  //   {
-  //     month: "July",
-  //     title: '"LinkedIn Sales Navigator: Secrets Revealed"',
-  //     description: "with expert guest speaker Greg Burgoyne, Founder, Client Acquisition Systems, and LinkedIn expert",
-  //     summarylink:
-  //       "https://docs.google.com/document/d/1zCuFNJQxfcUqT3VMboBXrX5uTQsWQ43y/edit?usp=sharing&ouid=106280256984024101930&rtpof=true&sd=true",
-  //   },
-  //   {
-  //     month: "August",
-  //     title: '"The Mind Boggling Advances In AI for B2B Sales"',
-  //     description: "with expert guest speaker Isaac Cohen, CEO, Many Mangoes",
-  //     summarylink: "https://docs.google.com/document/d/1CMM0iYbnGDGf9APR7Q3NNkFjgVZaoiRB/edit?usp=drive_link&ouid=106280256984024101930&rtpof=true&sd=true",
-  //   },
-  //   {
-  //     month: "September",
-  //     title: '"The Hot Seat"',
-  //     description: "Bring your sales questions, challenges, or opportunities for the group to workshop and solve, right there and then. Live!",
-  //     summarylink: "https://docs.google.com/document/d/1gIdJVX7Chk3IbTqmIXkiLm36VBt3hPvG/edit?usp=drive_link&ouid=105641804438849414446&rtpof=true&sd=true",
-  //   },
-  //   {
-  //     month: "October",
-  //     title: '"Making Business Change Successful"',
-  //     description:
-  //       "Learn the key strategies and frameworks for successfully implementing organizational change initiatives and driving adoption.",
-  //   },
-  //   {
-  //     month: "November",
-  //     title: '"Beyond The Obvious: Discover Your Real Value Proposition!"',
-  //     description:
-  //       "Uncover and articulate your true competitive differentiators that resonate with buyers and drive sales success.",
-  //   },
-  //   {
-  //     month: "December",
-  //     title: '"The Crystal Ball: The Shape Of Sales In 2026"',
-  //     description: "with acclaimed international b2b sales expert Peter Strohkorb",
-  //   },
-  // ]
+  const topics = [
+    {
+      month: "January",
+      title: '"Jobless but Not Speechless": The Truth About Sales Job Hunting',
+      description: "An open and interactive discussion on this important subject in sales.",
+    },
+    {
+      month: "February",
+      title: '"The CRO Conundrum": What Is The CRO\'s REAL Role?',
+      description: "w/ expert guest speaker Warren Zenna, Founder and CEO at The CRO Collective, USA.",
+    },
+    {
+      month: "March",
+      title: '"Mastering Referral Selling"',
+      description: "w/ expert guest speaker Derek Morgan, Head of Affiliates & Partnerships at ReferIT, Australia",
+    },
+    {
+      month: "April",
+      title: '"The Hot Seat"',
+      description:
+        "Back by popular demand. Bring your burning sales questions, challenges, or opportunities for the group to workshop and solve, right there and then. Live!",
+    },
+    {
+      month: "May",
+      title: '"What\'s Possible with Ai for Sales Growth"',
+      description: "with expert guest speaker Lucas Meadowcroft, CEO, Crofti Ai, Australia.",
+      summarylink:
+        "https://static1.squarespace.com/static/62dab60e17e29179c0433792/t/681d5949d4025e3f5ba9817b/1746753867383/The+Sales+Masters+Roundtable+Summary+May+2025+-+What%27s+Possible+With+Ai.pdf",
+    },
+    {
+      month: "June",
+      title: '"More Pipeline from Your Website"',
+      description: "with expert guest speaker Terry Wilson, CEO, Chat Metrics, Australia.",
+      summarylink:
+        "https://docs.google.com/document/d/19dtVebKeRAfiBgVSNJkJu8mVJ8TzD9Kf/edit?usp=sharing&ouid=109878350311066705609&rtpof=true&sd=true",
+    },
+    {
+      month: "July",
+      title: '"LinkedIn Sales Navigator: Secrets Revealed"',
+      description: "with expert guest speaker Greg Burgoyne, Founder, Client Acquisition Systems, and LinkedIn expert",
+      summarylink:
+        "https://docs.google.com/document/d/1zCuFNJQxfcUqT3VMboBXrX5uTQsWQ43y/edit?usp=sharing&ouid=106280256984024101930&rtpof=true&sd=true",
+    },
+    {
+      month: "August",
+      title: '"The Mind Boggling Advances In AI for B2B Sales"',
+      description: "with expert guest speaker Isaac Cohen, CEO, Many Mangoes",
+      summarylink: "https://docs.google.com/document/d/1CMM0iYbnGDGf9APR7Q3NNkFjgVZaoiRB/edit?usp=drive_link&ouid=106280256984024101930&rtpof=true&sd=true",
+    },
+    {
+      month: "September",
+      title: '"The Hot Seat"',
+      description: "Bring your sales questions, challenges, or opportunities for the group to workshop and solve, right there and then. Live!",
+      summarylink: "https://docs.google.com/document/d/1gIdJVX7Chk3IbTqmIXkiLm36VBt3hPvG/edit?usp=drive_link&ouid=105641804438849414446&rtpof=true&sd=true",
+    },
+    {
+      month: "October",
+      title: '"Making Business Change Successful"',
+      description:
+        "Learn the key strategies and frameworks for successfully implementing organizational change initiatives and driving adoption.",
+    },
+    {
+      month: "November",
+      title: '"Beyond The Obvious: Discover Your Real Value Proposition!"',
+      description:
+        "Uncover and articulate your true competitive differentiators that resonate with buyers and drive sales success.",
+    },
+    {
+      month: "December",
+      title: '"The Crystal Ball: The Shape Of Sales In 2026"',
+      description: "with acclaimed international b2b sales expert Peter Strohkorb",
+    },
+  ]
 
   return (
     <div className="min-h-screen bg-white">
