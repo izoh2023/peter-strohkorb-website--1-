@@ -48,9 +48,9 @@ export default function AIAdvicePage() {
             <FadeInSection>
               <Bot className="w-10 h-10 mx-auto mb-6 text-accent" />
 
-              <h2 className="text-5xl md:text-6xl font-black mb-8">
-                Need advice on a sales challenge? Ask Peter.
-              </h2>
+              <h3 className="text-5xl md:text-6xl font-black mb-8">
+                Access Peter's Sales Strategy Advice, 24/7, Free Of Charge!
+              </h3>
 
               {/* Voice Interaction Button */}
               <div className="mb-8">
@@ -63,7 +63,7 @@ export default function AIAdvicePage() {
                       🎤
                       <div className="absolute -inset-1 bg-white/20 rounded-full animate-pulse md:group-hover:animate-ping"></div>
                     </div>
-                    <span>Ask Peter with Your Voice</span>
+                    <span>Use Your Voice And Get Instant Sales Advice. Live!</span>
                     <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
                   </div>
 
@@ -185,7 +185,7 @@ export default function AIAdvicePage() {
         </section>
 
         {/* Sample Prompts Section */}
-        <section className="py-16 gradient-surface">
+        {/* <section className="py-16 gradient-surface">
           <div className="container mx-auto px-4">
             <FadeInSection>
               <div className="text-center mb-12">
@@ -215,7 +215,7 @@ export default function AIAdvicePage() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* CTA to use the widget */}
         <section className="py-16 bg-white">
