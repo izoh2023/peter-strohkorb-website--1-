@@ -56,19 +56,21 @@ export default function AIAdvicePage() {
               <div className="mb-8">
                 <button
                   onClick={handleVoiceClick}
-                  className="group relative bg-accent active:bg-accent/80 md:hover:bg-accent/90 text-white font-bold py-6 px-12 rounded-full text-xl shadow-2xl md:hover:shadow-accent/25 transition-all duration-300 transform active:scale-95 md:hover:scale-105 border-2 border-white/20 md:hover:border-white/40"
+                  className="group relative bg-orange-500 active:bg-orange-600 md:hover:bg-gray-500 text-white font-bold py-6 px-12 rounded-full text-xl shadow-2xl md:hover:shadow-gray-500/25 transition-all duration-300 transform active:scale-95 md:hover:scale-105 border-2 border-white/20 md:hover:border-white/40"
                 >
                   <div className="flex items-center gap-4">
                     <div className="relative">
                       🎤
                       <div className="absolute -inset-1 bg-white/20 rounded-full animate-pulse md:group-hover:animate-ping"></div>
                     </div>
-                    <span>Use Your Voice And Get Instant Sales Advice. Live!</span>
+                    <span>
+                      Use Your Voice And Get Instant Sales Advice. Live!
+                    </span>
                     <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
                   </div>
 
                   {/* Subtle glow effect */}
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-accent/50 to-accent/30 blur-xl opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-orange-500/50 to-orange-400/30 blur-xl opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
                 </button>
 
                 <p className="text-sm text-gray-400 mt-3 max-w-md mx-auto">
@@ -77,8 +79,7 @@ export default function AIAdvicePage() {
                 <br />
 
                 <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-12">
-                  Get instant, expert sales advice powered by Peter's 25+ years
-                  of experience, available 24/7.
+                  Speak to Peter's AI Alter Ego, get expert sales advice 24/7
                 </p>
               </div>
             </FadeInSection>
