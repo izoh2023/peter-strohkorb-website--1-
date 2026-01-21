@@ -67,6 +67,7 @@ export default function RootLayout({
           src="https://www.googletagmanager.com/gtag/js?id=G-H07HWWGX1Z"
           strategy="afterInteractive"
         />
+        {/* hello */}
         <Script id="ga-init" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
