@@ -87,7 +87,7 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.png",
   },
-    generator: 'v0.app'
+  generator: 'v0.app'
 }
 
 export default function RootLayout({
@@ -136,6 +136,14 @@ export default function RootLayout({
           `,
           }}
         />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-H07HWWGX1Z"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-H07HWWGX1Z');
+        </script>
       </head>
       <body className={`${inter.className} flex flex-col min-h-screen bg-white`}>
         <ModernHeader />
